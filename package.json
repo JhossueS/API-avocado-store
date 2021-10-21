@@ -1,0 +1,26 @@
+{
+  "name": "api-fruit-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set DEBUG=app:* && nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhossueS/API-fruit-store.git"
+  },
+  "author": "Jhossue Sanchez <jhossue.d.sanchez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JhossueS/API-fruit-store/issues"
+  },
+  "homepage": "https://github.com/JhossueS/API-fruit-store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
