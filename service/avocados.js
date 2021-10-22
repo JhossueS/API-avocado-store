@@ -1,8 +1,9 @@
 const db = require("../lib/mongo");
+const client = db();
+const collection = 'avocados';
 
-const getAvocados = async (collection) => {
+const getAvocados = async () => {
   try {
-    const client = db();
     const avocados = (await client).getAll(collection);
     return avocados;
   } catch (e) {
@@ -10,9 +11,8 @@ const getAvocados = async (collection) => {
   }
 };
 
-const getAvocado = async (collection, avocadoId) => {
+const getAvocado = async (avocadoId) => {
   try {
-    const client = db();
     const avocado = (await client).get(collection, avocadoId);
     return avocado;
   } catch (e) {

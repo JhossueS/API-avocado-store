@@ -8,7 +8,7 @@ const productsApi = (app) => {
   // get all avocados
   router.get('/', async (req, res, next) => {
     try {
-      const avocados = await getAvocados('avocados');
+      const avocados = await getAvocados();
 
       res.status(200).json({
         data: avocados,
@@ -23,7 +23,7 @@ const productsApi = (app) => {
   router.get('/:avocadoId', async (req, res, next) => {
     const { avocadoId } = req.params;
     try {
-      const avocado = await getAvocado('avocados', avocadoId);
+      const avocado = await getAvocado(avocadoId);
 
       res.status(200).json({
         data: avocado,
