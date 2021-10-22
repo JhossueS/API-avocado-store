@@ -1,12 +1,16 @@
 const express = require('express');
+const helmet = require('helmet');
+const { config } = require('./config')
 const app = express();
 
-app.get('/', (res, req) => {
-  req.json({
-    hello: 'world'
-  })
-})
+const productsApi = require('./Routes/avocados');
 
-app.listen('5000', () => {
-  console.log(`listening http://localhost:5000`)
+// body parser
+app.use(express.json());
+app.use(helmet());
+// routes
+productsApi(app);
+
+app.listen(config.port, () => {
+  console.log(`listening http://localhost:${config.port}`)
 });
