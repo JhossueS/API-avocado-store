@@ -15,6 +15,14 @@ const userAuth = (app) => {
       });
     }
     register({ password, name, email });
+
+    res.json({
+      data: {
+        name,
+        email,
+      },
+      message: 'user created',
+    })
     res.end();
   });
 
