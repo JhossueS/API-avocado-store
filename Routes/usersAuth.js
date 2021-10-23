@@ -6,7 +6,7 @@ const userAuth = (app) => {
   const router = express.Router();
   app.use("/api/auth", router);
 
-  router.post("/register", (req, res, next) => {
+  router.post("/register", async (req, res, next) => {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
@@ -14,7 +14,7 @@ const userAuth = (app) => {
         message: "error",
       });
     }
-    register({ password, name, email });
+    await register({ password, name, email });
 
     res.json({
       data: {
